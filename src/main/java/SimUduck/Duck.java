@@ -9,5 +9,9 @@ public abstract class Duck {
         System.out.println("첨벙첨벙~");
     }
 
+    public void fly() {
+        System.out.println("훨훨~");
+    }
+
     public abstract void display();
 }
