@@ -118,5 +118,5 @@ replay_pid*
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,java
 *.lock
 *.bin
-.gradle/**/*.lock
+/**/*.lock
 .gradle/*.probe
