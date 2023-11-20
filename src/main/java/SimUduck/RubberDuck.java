@@ -1,6 +1,6 @@
 package SimUduck;
 
-public class RubberDuck extends Duck {
+public class RubberDuck extends Duck implements Quackable {
 
     @Override
     public void quack() {
@@ -10,10 +10,5 @@ public class RubberDuck extends Duck {
     @Override
     public void display() {
         // 적당한 모양을 표시
-    }
-
-    @Override
-    public void fly() {
-        // 아무것도 하지 않게 오버라이드
     }
 }
