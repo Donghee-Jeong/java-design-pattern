@@ -14,7 +14,7 @@ public class SwingObserverExample {
         frame = new JFrame();
 
         JButton button = new JButton("할까? 말까?");
-        button.addActionListener(new AngelListener());
-        button.addActionListener(new DevilListener());
+        button.addActionListener(event -> System.out.println("하지마!"));
+        button.addActionListener(event -> System.out.println("해!"));
     }
 }
