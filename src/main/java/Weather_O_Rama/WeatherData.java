@@ -1,24 +1,44 @@
 package Weather_O_Rama;
 
-public class WeatherData {
+import java.util.ArrayList;
+import java.util.List;
 
-    // getTemperature()
-    // getHumidity()
-    // getPressure()
-    // measurementsChanged()
+public class WeatherData implements Subject {
 
-    /**
-     * 기상 관측값이
-     * 갱신될 때마다
-     * 이 메소드가 호출됩니다
-     */
+    private List<Observer> observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
+
+    public WeatherData() {
+        observers = new ArrayList<>();
+    }
+
+    @Override
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
+    }
+
     public void measurementsChanged() {
-        float temp = getTemperature();
-        float humidity = getHumidity();
-        float pressure = getPressure();
+        notifyObservers();
+    }
 
-        currentConditionsDisplay.update(temp, humidity, pressure);
-        statisticsDisplay.update(temp, humidity, pressure);
-        forecaseDisplay.update(temp, humidity, pressure);
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
     }
 }
