@@ -13,6 +13,12 @@ public class WeatherData {
      * 이 메소드가 호출됩니다
      */
     public void measurementsChanged() {
-        // 코드가 들어갈 자리
+        float temp = getTemperature();
+        float humidity = getHumidity();
+        float pressure = getPressure();
+
+        currentConditionsDisplay.update(temp, humidity, pressure);
+        statisticsDisplay.update(temp, humidity, pressure);
+        forecaseDisplay.update(temp, humidity, pressure);
     }
 }
