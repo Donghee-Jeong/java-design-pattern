@@ -3,13 +3,13 @@ package Menu.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu extends MenuComponent {
+public class MenuNode extends MenuComponent {
 
     List<MenuComponent> menuComponents = new ArrayList<>();
     String name;
     String description;
 
-    public Menu(String name, String description) {
+    public MenuNode(String name, String description) {
         this.name = name;
         this.description = description;
     }
