@@ -1,5 +1,8 @@
 package Menu;
 
+import Menu.iterator.DinnerMenuIterator;
+import Menu.iterator.Iterator;
+
 public class DinnerMenu {
     static final int MAX_ITEMS = 2;
     int numberOfItems = 0;
@@ -29,7 +32,7 @@ public class DinnerMenu {
         }
     }
 
-    public MenuItem[] getMenuItems() {
-        return menuItems;
+    public Iterator createIterator() {
+        return new DinnerMenuIterator(menuItems);
     }
 }
