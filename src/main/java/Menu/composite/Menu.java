@@ -42,5 +42,9 @@ public class Menu extends MenuComponent {
     @Override
     public void print() {
         System.out.println(name + " / " + description);
+
+        for (MenuComponent menuComponent : menuComponents) {
+            menuComponent.print();
+        }
     }
 }
