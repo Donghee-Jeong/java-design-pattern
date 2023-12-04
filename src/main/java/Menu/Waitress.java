@@ -1,27 +1,17 @@
 package Menu;
 
 
-import java.util.Iterator;
-import java.util.List;
+import Menu.composite.MenuComponent;
 
 public class Waitress {
-    List<Menu> menus;
 
-    public Waitress(List<Menu> menus) {
-        this.menus = menus;
+    MenuComponent allMenus;
+
+    public Waitress(MenuComponent allMenus) {
+        this.allMenus = allMenus;
     }
 
     public void printMenu() {
-        Iterator<Menu> menuIterator = menus.iterator();
-        while (menuIterator.hasNext()) {
-            Menu menu = menuIterator.next();
-            printMenu(menu.createIterator());
-        }
-    }
-
-    private void printMenu(Iterator<MenuItem> iterator) {
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        allMenus.print();
     }
 }
