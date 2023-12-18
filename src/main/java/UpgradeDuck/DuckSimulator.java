@@ -17,11 +17,28 @@ public class DuckSimulator {
 
         System.out.println("\n오리 시뮬레이션 게임");
 
-        simulate(mallardDuck);
-        simulate(redheadDuck);
-        simulate(duckCall);
-        simulate(rubberDuck);
-        simulate(gooseDuck);
+        Flock flockOfDucks = new Flock();
+
+        flockOfDucks.add(mallardDuck);
+        flockOfDucks.add(redheadDuck);
+        flockOfDucks.add(duckCall);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(gooseDuck);
+
+        Flock flockOfMallards = new Flock();
+
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+
+        flockOfDucks.add(flockOfMallards);
+
+        System.out.println("\n오리 시뮬레이션 게임: 전체 무리");
+        simulate(flockOfDucks);
+
+        System.out.println("\n오리 시뮬레이션 게임: 물오리 무리");
+        simulate(flockOfMallards);
 
         System.out.println("오리가 소리 낸 횟수 : " + QuackCounter.getQuack() + " 번");
     }
