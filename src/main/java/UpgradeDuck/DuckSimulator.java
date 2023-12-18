@@ -7,10 +7,11 @@ public class DuckSimulator {
     }
 
     private void simulate() {
-        MallarDuck mallarDuck = new MallarDuck();
-        RedheadDuck redheadDuck = new RedheadDuck();
-        DuckCall duckCall = new DuckCall();
-        RubberDuck rubberDuck = new RubberDuck();
+        Quackable mallarDuck = new MallarDuck();
+        Quackable redheadDuck = new RedheadDuck();
+        Quackable duckCall = new DuckCall();
+        Quackable rubberDuck = new RubberDuck();
+        Quackable gooseDuck = new GooseAdapter(new Goose());
 
         System.out.println("\n오리 시뮬레이션 게임");
 
@@ -18,6 +19,7 @@ public class DuckSimulator {
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
+        simulate(gooseDuck);
     }
 
     void simulate(Quackable duck) {
